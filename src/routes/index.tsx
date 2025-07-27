@@ -885,13 +885,26 @@ function Home() {
             </section>
 
             {/* Skills & Technologies Section */}
-            <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute top-20 left-10 w-40 h-40 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-48 h-48 bg-indigo-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-100/10 rounded-full blur-3xl"></div>
+
+                {/* Floating Tech Icons */}
+                <div className="absolute top-32 right-32 w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center animate-bounce delay-500">
+                    <span className="text-sm">⚛️</span>
+                </div>
+                <div className="absolute bottom-32 left-32 w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center animate-bounce delay-1500">
+                    <span className="text-sm">💻</span>
+                </div>
+
+                <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 animate-slide-up">
                             Skills & Technologies
                         </h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up delay-200">
                             I work with modern technologies to build scalable,
                             performant, and beautiful web applications.
                         </p>
@@ -899,120 +912,265 @@ function Home() {
 
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* React & Modern JavaScript */}
-                        <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex items-center mb-4">
-                                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                    <svg
-                                        className="w-6 h-6 text-blue-600"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                                        />
-                                    </svg>
+                        <div className="group animate-slide-up delay-400">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-blue-100/50 relative overflow-hidden">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 right-4 w-6 h-6 bg-blue-400/20 rounded-full animate-bounce delay-500"></div>
+                                <div className="absolute bottom-4 left-4 w-4 h-4 bg-indigo-400/20 rounded-full animate-bounce delay-1000"></div>
+
+                                <div className="relative z-10">
+                                    <div className="flex items-center mb-6">
+                                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            <svg
+                                                className="w-8 h-8 text-white"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                                React & Modern JavaScript
+                                            </h3>
+                                            <div className="flex items-center mt-2">
+                                                <div className="w-20 bg-blue-100 rounded-full h-2 mr-2">
+                                                    <div className="bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full w-5/6 animate-pulse"></div>
+                                                </div>
+                                                <span className="text-xs text-slate-500">
+                                                    Expert
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-slate-600 leading-relaxed mb-4 group-hover:text-slate-700 transition-colors">
+                                        Building dynamic, responsive
+                                        applications with clean, maintainable
+                                        code that scales with your ambitions.
+                                    </p>
+
+                                    {/* Tech Stack Tags */}
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full hover:bg-blue-200 transition-colors cursor-pointer">
+                                            React
+                                        </span>
+                                        <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full hover:bg-indigo-200 transition-colors cursor-pointer">
+                                            JavaScript
+                                        </span>
+                                        <span className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full hover:bg-purple-200 transition-colors cursor-pointer">
+                                            TypeScript
+                                        </span>
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-semibold text-slate-900">
-                                    React & Modern JavaScript
-                                </h3>
                             </div>
-                            <p className="text-slate-600 leading-relaxed">
-                                Building dynamic, responsive applications with
-                                clean, maintainable code that scales with your
-                                ambitions.
-                            </p>
                         </div>
 
                         {/* Tailwind CSS Magic */}
-                        <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex items-center mb-4">
-                                <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
-                                    <svg
-                                        className="w-6 h-6 text-cyan-600"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
-                                        />
-                                    </svg>
+                        <div className="group animate-slide-up delay-600">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-cyan-100/50 relative overflow-hidden">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/50 to-teal-50/50"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 left-4 w-6 h-6 bg-cyan-400/20 rounded-full animate-bounce delay-700"></div>
+                                <div className="absolute bottom-4 right-4 w-4 h-4 bg-teal-400/20 rounded-full animate-bounce delay-1200"></div>
+
+                                <div className="relative z-10">
+                                    <div className="flex items-center mb-6">
+                                        <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl flex items-center justify-center mr-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            <svg
+                                                className="w-8 h-8 text-white"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-2xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                                                Tailwind CSS Magic
+                                            </h3>
+                                            <div className="flex items-center mt-2">
+                                                <div className="w-20 bg-cyan-100 rounded-full h-2 mr-2">
+                                                    <div className="bg-gradient-to-r from-cyan-500 to-teal-600 h-2 rounded-full w-full animate-pulse delay-200"></div>
+                                                </div>
+                                                <span className="text-xs text-slate-500">
+                                                    Master
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-slate-600 leading-relaxed mb-4 group-hover:text-slate-700 transition-colors">
+                                        Creating stunning, consistent designs
+                                        without the bloat – just pure, efficient
+                                        styling that makes development a joy.
+                                    </p>
+
+                                    {/* Tech Stack Tags */}
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full hover:bg-cyan-200 transition-colors cursor-pointer">
+                                            Tailwind
+                                        </span>
+                                        <span className="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full hover:bg-teal-200 transition-colors cursor-pointer">
+                                            CSS
+                                        </span>
+                                        <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full hover:bg-blue-200 transition-colors cursor-pointer">
+                                            PostCSS
+                                        </span>
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-semibold text-slate-900">
-                                    Tailwind CSS Magic
-                                </h3>
                             </div>
-                            <p className="text-slate-600 leading-relaxed">
-                                Creating stunning, consistent designs without
-                                the bloat – just pure, efficient styling that
-                                makes development a joy.
-                            </p>
                         </div>
 
                         {/* WordPress with Soul */}
-                        <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex items-center mb-4">
-                                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                                    <svg
-                                        className="w-6 h-6 text-green-600"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9a9 9 0 00-9 9m9-9v18"
-                                        />
-                                    </svg>
+                        <div className="group animate-slide-up delay-800">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-green-100/50 relative overflow-hidden">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-emerald-50/50"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 right-4 w-6 h-6 bg-green-400/20 rounded-full animate-bounce delay-900"></div>
+                                <div className="absolute bottom-4 left-4 w-4 h-4 bg-emerald-400/20 rounded-full animate-bounce delay-1400"></div>
+
+                                <div className="relative z-10">
+                                    <div className="flex items-center mb-6">
+                                        <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            <svg
+                                                className="w-8 h-8 text-white"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9a9 9 0 00-9 9m9-9v18"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-2xl font-bold text-slate-900 group-hover:text-green-600 transition-colors">
+                                                WordPress with Soul
+                                            </h3>
+                                            <div className="flex items-center mt-2">
+                                                <div className="w-20 bg-green-100 rounded-full h-2 mr-2">
+                                                    <div className="bg-gradient-to-r from-green-500 to-emerald-600 h-2 rounded-full w-4/5 animate-pulse delay-400"></div>
+                                                </div>
+                                                <span className="text-xs text-slate-500">
+                                                    Advanced
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-slate-600 leading-relaxed mb-4 group-hover:text-slate-700 transition-colors">
+                                        Transforming WordPress sites with
+                                        Elementor into custom experiences that
+                                        don't scream "I'm a template" – because
+                                        your brand deserves better.
+                                    </p>
+
+                                    {/* Tech Stack Tags */}
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full hover:bg-green-200 transition-colors cursor-pointer">
+                                            WordPress
+                                        </span>
+                                        <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full hover:bg-emerald-200 transition-colors cursor-pointer">
+                                            Elementor
+                                        </span>
+                                        <span className="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full hover:bg-teal-200 transition-colors cursor-pointer">
+                                            PHP
+                                        </span>
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-semibold text-slate-900">
-                                    WordPress with Soul
-                                </h3>
                             </div>
-                            <p className="text-slate-600 leading-relaxed">
-                                Transforming WordPress sites with Elementor into
-                                custom experiences that don't scream "I'm a
-                                template" – because your brand deserves better.
-                            </p>
                         </div>
 
                         {/* Pixel-Perfect UI Implementation */}
-                        <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex items-center mb-4">
-                                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                    <svg
-                                        className="w-6 h-6 text-purple-600"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                                        />
-                                    </svg>
+                        <div className="group animate-slide-up delay-1000">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-purple-100/50 relative overflow-hidden">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 left-4 w-6 h-6 bg-purple-400/20 rounded-full animate-bounce delay-1100"></div>
+                                <div className="absolute bottom-4 right-4 w-4 h-4 bg-pink-400/20 rounded-full animate-bounce delay-1600"></div>
+
+                                <div className="relative z-10">
+                                    <div className="flex items-center mb-6">
+                                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mr-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            <svg
+                                                className="w-8 h-8 text-white"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth={2}
+                                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-2xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">
+                                                Pixel-Perfect UI Implementation
+                                            </h3>
+                                            <div className="flex items-center mt-2">
+                                                <div className="w-20 bg-purple-100 rounded-full h-2 mr-2">
+                                                    <div className="bg-gradient-to-r from-purple-500 to-pink-600 h-2 rounded-full w-5/6 animate-pulse delay-600"></div>
+                                                </div>
+                                                <span className="text-xs text-slate-500">
+                                                    Specialist
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-slate-600 leading-relaxed mb-4 group-hover:text-slate-700 transition-colors">
+                                        Taking your designs and turning them
+                                        into living, breathing web experiences
+                                        that honor every detail while adding
+                                        that extra polish that makes them shine.
+                                    </p>
+
+                                    {/* Tech Stack Tags */}
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full hover:bg-purple-200 transition-colors cursor-pointer">
+                                            Figma
+                                        </span>
+                                        <span className="px-3 py-1 bg-pink-100 text-pink-700 text-sm rounded-full hover:bg-pink-200 transition-colors cursor-pointer">
+                                            Design
+                                        </span>
+                                        <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full hover:bg-indigo-200 transition-colors cursor-pointer">
+                                            UI/UX
+                                        </span>
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-semibold text-slate-900">
-                                    Pixel-Perfect UI Implementation
-                                </h3>
                             </div>
-                            <p className="text-slate-600 leading-relaxed">
-                                Taking your designs and turning them into
-                                living, breathing web experiences that honor
-                                every detail while adding that extra polish that
-                                makes them shine.
-                            </p>
                         </div>
                     </div>
 
