@@ -1,8 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "~/components/ui";
-
+import { seo } from "~/utils/seo";
 export const Route = createFileRoute("/")({
     component: Home,
+    head: () => ({
+        meta: seo({
+            title: "Sharfuzzaman | Frontend Developer & UI Enthusiast",
+            description:
+                "Hi, I'm Sharfuzzaman – a frontend developer who crafts pixel-perfect, human-friendly web experiences using React, Tailwind, and modern tools.",
+        }),
+    }),
 });
 
 function Home() {
