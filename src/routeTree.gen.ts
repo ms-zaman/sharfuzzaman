@@ -15,6 +15,8 @@ import { Route as WorkRouteImport } from './routes/work'
 import { Route as UsersRouteImport } from './routes/users'
 import { Route as RedirectRouteImport } from './routes/redirect'
 import { Route as PostsRouteImport } from './routes/posts'
+import { Route as PortfolioShowcaseRouteImport } from './routes/portfolio-showcase'
+import { Route as PortfolioBrowserRouteImport } from './routes/portfolio-browser'
 import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as DeferredRouteImport } from './routes/deferred'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -25,6 +27,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as UsersIndexRouteImport } from './routes/users.index'
 import { Route as PostsIndexRouteImport } from './routes/posts.index'
 import { Route as UsersUserIdRouteImport } from './routes/users.$userId'
+import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
 import { Route as PostsPostIdRouteImport } from './routes/posts.$postId'
 import { Route as PathlessLayoutNestedLayoutRouteImport } from './routes/_pathlessLayout/_nested-layout'
 import { Route as PostsPostIdDeepRouteImport } from './routes/posts_.$postId.deep'
@@ -54,6 +57,16 @@ const RedirectRoute = RedirectRouteImport.update({
 const PostsRoute = PostsRouteImport.update({
   id: '/posts',
   path: '/posts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioShowcaseRoute = PortfolioShowcaseRouteImport.update({
+  id: '/portfolio-showcase',
+  path: '/portfolio-showcase',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioBrowserRoute = PortfolioBrowserRouteImport.update({
+  id: '/portfolio-browser',
+  path: '/portfolio-browser',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DesignSystemRoute = DesignSystemRouteImport.update({
@@ -105,6 +118,11 @@ const UsersUserIdRoute = UsersUserIdRouteImport.update({
   path: '/$userId',
   getParentRoute: () => UsersRoute,
 } as any)
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/projects/$slug',
+  path: '/projects/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PostsPostIdRoute = PostsPostIdRouteImport.update({
   id: '/$postId',
   path: '/$postId',
@@ -155,11 +173,14 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
   '/design-system': typeof DesignSystemRoute
+  '/portfolio-browser': typeof PortfolioBrowserRoute
+  '/portfolio-showcase': typeof PortfolioShowcaseRoute
   '/posts': typeof PostsRouteWithChildren
   '/redirect': typeof RedirectRoute
   '/users': typeof UsersRouteWithChildren
   '/work': typeof WorkRoute
   '/posts/$postId': typeof PostsPostIdRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/posts/': typeof PostsIndexRoute
   '/users/': typeof UsersIndexRoute
@@ -174,9 +195,12 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
   '/design-system': typeof DesignSystemRoute
+  '/portfolio-browser': typeof PortfolioBrowserRoute
+  '/portfolio-showcase': typeof PortfolioShowcaseRoute
   '/redirect': typeof RedirectRoute
   '/work': typeof WorkRoute
   '/posts/$postId': typeof PostsPostIdRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/posts': typeof PostsIndexRoute
   '/users': typeof UsersIndexRoute
@@ -193,12 +217,15 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
   '/design-system': typeof DesignSystemRoute
+  '/portfolio-browser': typeof PortfolioBrowserRoute
+  '/portfolio-showcase': typeof PortfolioShowcaseRoute
   '/posts': typeof PostsRouteWithChildren
   '/redirect': typeof RedirectRoute
   '/users': typeof UsersRouteWithChildren
   '/work': typeof WorkRoute
   '/_pathlessLayout/_nested-layout': typeof PathlessLayoutNestedLayoutRouteWithChildren
   '/posts/$postId': typeof PostsPostIdRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
   '/users/$userId': typeof UsersUserIdRoute
   '/posts/': typeof PostsIndexRoute
   '/users/': typeof UsersIndexRoute
@@ -215,11 +242,14 @@ export interface FileRouteTypes {
     | '/contact'
     | '/deferred'
     | '/design-system'
+    | '/portfolio-browser'
+    | '/portfolio-showcase'
     | '/posts'
     | '/redirect'
     | '/users'
     | '/work'
     | '/posts/$postId'
+    | '/projects/$slug'
     | '/users/$userId'
     | '/posts/'
     | '/users/'
@@ -234,9 +264,12 @@ export interface FileRouteTypes {
     | '/contact'
     | '/deferred'
     | '/design-system'
+    | '/portfolio-browser'
+    | '/portfolio-showcase'
     | '/redirect'
     | '/work'
     | '/posts/$postId'
+    | '/projects/$slug'
     | '/users/$userId'
     | '/posts'
     | '/users'
@@ -252,12 +285,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/deferred'
     | '/design-system'
+    | '/portfolio-browser'
+    | '/portfolio-showcase'
     | '/posts'
     | '/redirect'
     | '/users'
     | '/work'
     | '/_pathlessLayout/_nested-layout'
     | '/posts/$postId'
+    | '/projects/$slug'
     | '/users/$userId'
     | '/posts/'
     | '/users/'
@@ -274,10 +310,13 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DeferredRoute: typeof DeferredRoute
   DesignSystemRoute: typeof DesignSystemRoute
+  PortfolioBrowserRoute: typeof PortfolioBrowserRoute
+  PortfolioShowcaseRoute: typeof PortfolioShowcaseRoute
   PostsRoute: typeof PostsRouteWithChildren
   RedirectRoute: typeof RedirectRoute
   UsersRoute: typeof UsersRouteWithChildren
   WorkRoute: typeof WorkRoute
+  ProjectsSlugRoute: typeof ProjectsSlugRoute
   PostsPostIdDeepRoute: typeof PostsPostIdDeepRoute
 }
 export interface FileServerRoutesByFullPath {
@@ -337,6 +376,20 @@ declare module '@tanstack/react-router' {
       path: '/posts'
       fullPath: '/posts'
       preLoaderRoute: typeof PostsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio-showcase': {
+      id: '/portfolio-showcase'
+      path: '/portfolio-showcase'
+      fullPath: '/portfolio-showcase'
+      preLoaderRoute: typeof PortfolioShowcaseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio-browser': {
+      id: '/portfolio-browser'
+      path: '/portfolio-browser'
+      fullPath: '/portfolio-browser'
+      preLoaderRoute: typeof PortfolioBrowserRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/design-system': {
@@ -408,6 +461,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/users/$userId'
       preLoaderRoute: typeof UsersUserIdRouteImport
       parentRoute: typeof UsersRoute
+    }
+    '/projects/$slug': {
+      id: '/projects/$slug'
+      path: '/projects/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/posts/$postId': {
       id: '/posts/$postId'
@@ -546,10 +606,13 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DeferredRoute: DeferredRoute,
   DesignSystemRoute: DesignSystemRoute,
+  PortfolioBrowserRoute: PortfolioBrowserRoute,
+  PortfolioShowcaseRoute: PortfolioShowcaseRoute,
   PostsRoute: PostsRouteWithChildren,
   RedirectRoute: RedirectRoute,
   UsersRoute: UsersRouteWithChildren,
   WorkRoute: WorkRoute,
+  ProjectsSlugRoute: ProjectsSlugRoute,
   PostsPostIdDeepRoute: PostsPostIdDeepRoute,
 }
 export const routeTree = rootRouteImport
