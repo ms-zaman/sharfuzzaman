@@ -105,34 +105,6 @@ function Home() {
                                 </Button>
                             </Link>
                         </div>
-
-                        {/* Quick Stats */}
-                        <div className="grid grid-cols-3 gap-6 pt-8 animate-slide-up delay-1200">
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-slate-900">
-                                    50+
-                                </div>
-                                <div className="text-sm text-slate-600">
-                                    Projects
-                                </div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-slate-900">
-                                    3+
-                                </div>
-                                <div className="text-sm text-slate-600">
-                                    Years Exp
-                                </div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-slate-900">
-                                    100%
-                                </div>
-                                <div className="text-sm text-slate-600">
-                                    Satisfaction
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Right Column - Visual Elements */}
@@ -239,21 +211,25 @@ function Home() {
             </section>
 
             {/* About Preview Section */}
-            <section className="relative py-20 bg-white">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="relative py-20 bg-white overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute top-10 right-10 w-32 h-32 bg-blue-100/50 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-100/50 rounded-full blur-2xl"></div>
+
+                <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 animate-slide-up">
                                 About Me
                             </h2>
-                            <div className="space-y-4 text-slate-700 leading-relaxed">
-                                <p>
+                            <div className="space-y-4 text-slate-700 leading-relaxed animate-slide-up delay-200">
+                                <p className="transform hover:translate-x-2 transition-transform duration-300">
                                     I'm the kind of person who gets genuinely
                                     excited about a perfectly aligned button,
                                     but I'm equally thrilled by a perfectly
                                     timed six over long-on.
                                 </p>
-                                <p>
+                                <p className="transform hover:translate-x-2 transition-transform duration-300 delay-100">
                                     As a frontend developer, I spend my days
                                     bringing designs to life with React, styling
                                     with Tailwind's elegant utility classes, and
@@ -264,7 +240,7 @@ function Home() {
                                     your hands – the kind of digital experiences
                                     that make people say "ahh, this just works."
                                 </p>
-                                <p>
+                                <p className="transform hover:translate-x-2 transition-transform duration-300 delay-200">
                                     When I'm not wrestling with CSS or debugging
                                     React components, you'll find me chasing
                                     cricket matches (both watching and playing),
@@ -273,62 +249,235 @@ function Home() {
                                     never been.
                                 </p>
                             </div>
-                            <Link to="/about">
-                                <Button
-                                    variant="outline"
-                                    size="lg"
-                                    className="group"
-                                >
-                                    More About Me
-                                    <svg
-                                        className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
+                            <div className="animate-slide-up delay-400">
+                                <Link to="/about">
+                                    <Button
+                                        variant="outline"
+                                        size="lg"
+                                        className="group relative overflow-hidden border-2 border-slate-300 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                                     >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                        />
-                                    </svg>
-                                </Button>
-                            </Link>
+                                        <span className="relative z-10">
+                                            More About Me
+                                        </span>
+                                        <div className="absolute inset-0 bg-blue-50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                                        <svg
+                                            className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                            />
+                                        </svg>
+                                    </Button>
+                                </Link>
+                            </div>
                         </div>
-                        <div className="relative">
-                            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="bg-white rounded-lg p-4 shadow-sm">
-                                        <div className="text-2xl font-bold text-blue-600">
-                                            50+
-                                        </div>
-                                        <div className="text-sm text-slate-600">
-                                            Projects Completed
+                        <div className="relative animate-slide-up delay-300">
+                            {/* Enhanced Decorative Elements */}
+                            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl animate-pulse"></div>
+                            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+
+                            {/* Floating Tech Icons */}
+                            <div className="absolute top-4 right-4 w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center animate-bounce delay-500">
+                                <span className="text-sm">⚛️</span>
+                            </div>
+                            <div className="absolute bottom-4 left-4 w-8 h-8 bg-green-500/10 rounded-lg flex items-center justify-center animate-bounce delay-1500">
+                                <span className="text-sm">🎨</span>
+                            </div>
+
+                            <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl p-8 relative overflow-hidden shadow-xl border border-white/50">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5"></div>
+                                <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-200/10 to-transparent rounded-full transform translate-x-24 -translate-y-24"></div>
+
+                                {/* Enhanced Stats Grid */}
+                                <div className="grid grid-cols-2 gap-6 relative z-10">
+                                    {/* Projects Counter */}
+                                    <div className="group relative">
+                                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-blue-100/50">
+                                            <div className="flex items-center justify-between mb-3">
+                                                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                                                    <svg
+                                                        className="w-6 h-6 text-white"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-3xl font-bold text-blue-600 group-hover:scale-110 transition-transform duration-300">
+                                                        50+
+                                                    </div>
+                                                    <div className="text-sm text-slate-500 font-medium">
+                                                        Projects
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="w-full bg-blue-100 rounded-full h-2">
+                                                <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full w-4/5 animate-pulse"></div>
+                                            </div>
+                                            <p className="text-xs text-slate-600 mt-2">
+                                                Completed Successfully
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className="bg-white rounded-lg p-4 shadow-sm">
-                                        <div className="text-2xl font-bold text-green-600">
-                                            3+
-                                        </div>
-                                        <div className="text-sm text-slate-600">
-                                            Years Experience
+
+                                    {/* Experience Counter */}
+                                    <div className="group relative">
+                                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-green-100/50">
+                                            <div className="flex items-center justify-between mb-3">
+                                                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg">
+                                                    <svg
+                                                        className="w-6 h-6 text-white"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-3xl font-bold text-green-600 group-hover:scale-110 transition-transform duration-300">
+                                                        3+
+                                                    </div>
+                                                    <div className="text-sm text-slate-500 font-medium">
+                                                        Years
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="w-full bg-green-100 rounded-full h-2">
+                                                <div className="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full w-3/4 animate-pulse delay-200"></div>
+                                            </div>
+                                            <p className="text-xs text-slate-600 mt-2">
+                                                Professional Experience
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className="bg-white rounded-lg p-4 shadow-sm">
-                                        <div className="text-2xl font-bold text-purple-600">
-                                            15+
-                                        </div>
-                                        <div className="text-sm text-slate-600">
-                                            Technologies
+
+                                    {/* Technologies Counter */}
+                                    <div className="group relative">
+                                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-purple-100/50">
+                                            <div className="flex items-center justify-between mb-3">
+                                                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                                                    <svg
+                                                        className="w-6 h-6 text-white"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-3xl font-bold text-purple-600 group-hover:scale-110 transition-transform duration-300">
+                                                        15+
+                                                    </div>
+                                                    <div className="text-sm text-slate-500 font-medium">
+                                                        Technologies
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="w-full bg-purple-100 rounded-full h-2">
+                                                <div className="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full w-5/6 animate-pulse delay-400"></div>
+                                            </div>
+                                            <p className="text-xs text-slate-600 mt-2">
+                                                Mastered & Learning
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className="bg-white rounded-lg p-4 shadow-sm">
-                                        <div className="text-2xl font-bold text-orange-600">
-                                            100%
+
+                                    {/* Satisfaction Counter */}
+                                    <div className="group relative">
+                                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-orange-100/50">
+                                            <div className="flex items-center justify-between mb-3">
+                                                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg">
+                                                    <svg
+                                                        className="w-6 h-6 text-white"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-3xl font-bold text-orange-600 group-hover:scale-110 transition-transform duration-300">
+                                                        100%
+                                                    </div>
+                                                    <div className="text-sm text-slate-500 font-medium">
+                                                        Satisfaction
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="w-full bg-orange-100 rounded-full h-2">
+                                                <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full w-full animate-pulse delay-600"></div>
+                                            </div>
+                                            <p className="text-xs text-slate-600 mt-2">
+                                                Client Happiness
+                                            </p>
                                         </div>
-                                        <div className="text-sm text-slate-600">
-                                            Client Satisfaction
+                                    </div>
+                                </div>
+
+                                {/* Personal Interests Row */}
+                                <div className="mt-8 pt-6 border-t border-slate-200/50">
+                                    <div className="flex items-center justify-center space-x-8">
+                                        <div className="flex items-center space-x-2 group cursor-pointer">
+                                            <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                                                <span className="text-sm group-hover:scale-110 transition-transform">
+                                                    🏏
+                                                </span>
+                                            </div>
+                                            <span className="text-sm text-slate-600 group-hover:text-green-600 transition-colors">
+                                                Cricket Enthusiast
+                                            </span>
+                                        </div>
+                                        <div className="flex items-center space-x-2 group cursor-pointer">
+                                            <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                                                <span className="text-sm group-hover:scale-110 transition-transform">
+                                                    🌍
+                                                </span>
+                                            </div>
+                                            <span className="text-sm text-slate-600 group-hover:text-blue-600 transition-colors">
+                                                Travel Lover
+                                            </span>
+                                        </div>
+                                        <div className="flex items-center space-x-2 group cursor-pointer">
+                                            <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                                                <span className="text-sm group-hover:scale-110 transition-transform">
+                                                    ✍️
+                                                </span>
+                                            </div>
+                                            <span className="text-sm text-slate-600 group-hover:text-purple-600 transition-colors">
+                                                Writer
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -339,13 +488,18 @@ function Home() {
             </section>
 
             {/* Featured Work Section */}
-            <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute top-20 left-10 w-40 h-40 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-100/10 rounded-full blur-3xl"></div>
+
+                <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 animate-slide-up">
                             My Work
                         </h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up delay-200">
                             Building digital experiences that bridge the gap
                             between beautiful and functional. Each project is an
                             opportunity to craft something that truly serves its
@@ -355,12 +509,17 @@ function Home() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                         {/* Project 1 */}
-                        <div className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                        <div className="group bg-white/80 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden hover:-translate-y-2 animate-slide-up delay-400 border border-white/50">
                             <div className="aspect-video bg-gradient-to-br from-blue-100 to-indigo-200 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-500"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 right-4 w-3 h-3 bg-blue-400/40 rounded-full animate-bounce delay-500"></div>
+                                <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400/40 rounded-full animate-bounce delay-1000"></div>
+
+                                <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                                     <div className="text-center">
-                                        <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-2">
+                                        <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-2 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
                                             <svg
                                                 className="w-8 h-8 text-white"
                                                 fill="none"
@@ -375,28 +534,28 @@ function Home() {
                                                 />
                                             </svg>
                                         </div>
-                                        <p className="text-sm font-medium text-slate-700">
+                                        <p className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">
                                             E-Commerce Platform
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="p-6">
-                                <h3 className="font-semibold text-slate-900 mb-2">
+                            <div className="p-6 relative">
+                                <h3 className="font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                                     E-Commerce Redesign
                                 </h3>
-                                <p className="text-slate-600 text-sm mb-4">
+                                <p className="text-slate-600 text-sm mb-4 leading-relaxed">
                                     Complete frontend overhaul with 40%
                                     conversion improvement
                                 </p>
                                 <div className="flex flex-wrap gap-2">
-                                    <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full hover:bg-blue-200 transition-colors">
                                         React
                                     </span>
-                                    <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full hover:bg-green-200 transition-colors">
                                         TypeScript
                                     </span>
-                                    <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full hover:bg-purple-200 transition-colors">
                                         Tailwind
                                     </span>
                                 </div>
@@ -404,12 +563,17 @@ function Home() {
                         </div>
 
                         {/* Project 2 */}
-                        <div className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                        <div className="group bg-white/80 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden hover:-translate-y-2 animate-slide-up delay-600 border border-white/50">
                             <div className="aspect-video bg-gradient-to-br from-green-100 to-emerald-200 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 group-hover:from-green-500/20 group-hover:to-emerald-500/20 transition-all duration-300"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 group-hover:from-green-500/30 group-hover:to-emerald-500/30 transition-all duration-500"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 left-4 w-3 h-3 bg-green-400/40 rounded-full animate-bounce delay-700"></div>
+                                <div className="absolute bottom-4 right-4 w-2 h-2 bg-emerald-400/40 rounded-full animate-bounce delay-1200"></div>
+
+                                <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                                     <div className="text-center">
-                                        <div className="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mb-2">
+                                        <div className="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mb-2 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
                                             <svg
                                                 className="w-8 h-8 text-white"
                                                 fill="none"
@@ -424,28 +588,28 @@ function Home() {
                                                 />
                                             </svg>
                                         </div>
-                                        <p className="text-sm font-medium text-slate-700">
+                                        <p className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">
                                             SaaS Dashboard
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="p-6">
-                                <h3 className="font-semibold text-slate-900 mb-2">
+                            <div className="p-6 relative">
+                                <h3 className="font-semibold text-slate-900 mb-2 group-hover:text-green-600 transition-colors">
                                     SaaS Dashboard
                                 </h3>
-                                <p className="text-slate-600 text-sm mb-4">
+                                <p className="text-slate-600 text-sm mb-4 leading-relaxed">
                                     Real-time analytics dashboard with complex
                                     data visualization
                                 </p>
                                 <div className="flex flex-wrap gap-2">
-                                    <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full hover:bg-blue-200 transition-colors">
                                         React
                                     </span>
-                                    <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full hover:bg-yellow-200 transition-colors">
                                         Node.js
                                     </span>
-                                    <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full hover:bg-green-200 transition-colors">
                                         MongoDB
                                     </span>
                                 </div>
@@ -453,12 +617,17 @@ function Home() {
                         </div>
 
                         {/* Project 3 */}
-                        <div className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                        <div className="group bg-white/80 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden hover:-translate-y-2 animate-slide-up delay-800 border border-white/50">
                             <div className="aspect-video bg-gradient-to-br from-purple-100 to-pink-200 relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 group-hover:from-purple-500/20 group-hover:to-pink-500/20 transition-all duration-300"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 group-hover:from-purple-500/30 group-hover:to-pink-500/30 transition-all duration-500"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 right-4 w-3 h-3 bg-purple-400/40 rounded-full animate-bounce delay-900"></div>
+                                <div className="absolute bottom-4 left-4 w-2 h-2 bg-pink-400/40 rounded-full animate-bounce delay-1400"></div>
+
+                                <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                                     <div className="text-center">
-                                        <div className="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mb-2">
+                                        <div className="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mb-2 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
                                             <svg
                                                 className="w-8 h-8 text-white"
                                                 fill="none"
@@ -473,28 +642,28 @@ function Home() {
                                                 />
                                             </svg>
                                         </div>
-                                        <p className="text-sm font-medium text-slate-700">
+                                        <p className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">
                                             Portfolio Website
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="p-6">
-                                <h3 className="font-semibold text-slate-900 mb-2">
+                            <div className="p-6 relative">
+                                <h3 className="font-semibold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors">
                                     Portfolio Website
                                 </h3>
-                                <p className="text-slate-600 text-sm mb-4">
+                                <p className="text-slate-600 text-sm mb-4 leading-relaxed">
                                     Modern portfolio with design system and
                                     animations
                                 </p>
                                 <div className="flex flex-wrap gap-2">
-                                    <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full hover:bg-blue-200 transition-colors">
                                         TanStack
                                     </span>
-                                    <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full hover:bg-green-200 transition-colors">
                                         TypeScript
                                     </span>
-                                    <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">
+                                    <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full hover:bg-purple-200 transition-colors">
                                         Tailwind
                                     </span>
                                 </div>
@@ -502,14 +671,17 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className="text-center">
+                    <div className="text-center animate-slide-up delay-1000">
                         <Link to="/work">
                             <Button
                                 variant="primary"
                                 size="lg"
-                                className="group"
+                                className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                             >
-                                View All Projects
+                                <span className="relative z-10">
+                                    View All Projects
+                                </span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                                 <svg
                                     className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
                                     fill="none"
@@ -530,77 +702,184 @@ function Home() {
             </section>
 
             {/* Beyond Code Section */}
-            <section className="relative py-20 bg-white">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="relative py-20 bg-white overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute top-10 left-10 w-32 h-32 bg-green-100/30 rounded-full blur-2xl animate-pulse"></div>
+                <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-100/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-100/20 rounded-full blur-3xl"></div>
+
+                <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 animate-slide-up">
                             Beyond Code
                         </h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-slide-up delay-200">
                             Where passion meets pixels
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {/* Cricket */}
-                        <div className="text-center group">
-                            <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
-                                <span className="text-2xl">🏏</span>
+                        <div className="group animate-slide-up delay-400">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-green-100/50 relative overflow-hidden">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-emerald-50/50"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 right-4 w-6 h-6 bg-green-400/20 rounded-full animate-bounce delay-500"></div>
+                                <div className="absolute bottom-4 left-4 w-4 h-4 bg-emerald-400/20 rounded-full animate-bounce delay-1000"></div>
+
+                                <div className="relative z-10 text-center">
+                                    {/* Enhanced Icon */}
+                                    <div className="relative mb-6">
+                                        <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                                                🏏
+                                            </span>
+                                        </div>
+                                        {/* Floating cricket elements */}
+                                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400/40 rounded-full animate-bounce delay-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-emerald-400/40 rounded-full animate-bounce delay-900 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-green-600 transition-colors">
+                                        Cricket Chronicles
+                                    </h3>
+
+                                    <p className="text-slate-600 leading-relaxed mb-6 group-hover:text-slate-700 transition-colors">
+                                        Whether I'm watching a nail-biting final
+                                        over or playing weekend league cricket,
+                                        the sport teaches me about strategy,
+                                        patience, and those moments when
+                                        everything just clicks. Much like
+                                        coding, really.
+                                    </p>
+
+                                    {/* Progress/Interest Level */}
+                                    <div className="w-full bg-green-100 rounded-full h-2 mb-2">
+                                        <div className="bg-gradient-to-r from-green-500 to-emerald-600 h-2 rounded-full w-5/6 animate-pulse"></div>
+                                    </div>
+                                    <p className="text-xs text-slate-500">
+                                        Passion Level: Expert
+                                    </p>
+                                </div>
                             </div>
-                            <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                                Cricket Chronicles
-                            </h3>
-                            <p className="text-slate-600 leading-relaxed">
-                                Whether I'm watching a nail-biting final over or
-                                playing weekend league cricket, the sport
-                                teaches me about strategy, patience, and those
-                                moments when everything just clicks. Much like
-                                coding, really.
-                            </p>
                         </div>
 
                         {/* Writing */}
-                        <div className="text-center group">
-                            <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
-                                <span className="text-2xl">✍️</span>
+                        <div className="group animate-slide-up delay-600">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-blue-100/50 relative overflow-hidden">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 left-4 w-6 h-6 bg-blue-400/20 rounded-full animate-bounce delay-700"></div>
+                                <div className="absolute bottom-4 right-4 w-4 h-4 bg-indigo-400/20 rounded-full animate-bounce delay-1200"></div>
+
+                                <div className="relative z-10 text-center">
+                                    {/* Enhanced Icon */}
+                                    <div className="relative mb-6">
+                                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                                                ✍️
+                                            </span>
+                                        </div>
+                                        {/* Floating writing elements */}
+                                        <div className="absolute -top-2 -left-2 w-4 h-4 bg-blue-400/40 rounded-full animate-bounce delay-800 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-indigo-400/40 rounded-full animate-bounce delay-1000 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                                        Writing Thoughts
+                                    </h3>
+
+                                    <p className="text-slate-600 leading-relaxed mb-6 group-hover:text-slate-700 transition-colors">
+                                        I believe the best ideas come from
+                                        curiosity and conversation. I document
+                                        my learnings, share insights from my
+                                        journey, and sometimes just write about
+                                        the interesting intersections between
+                                        technology and life.
+                                    </p>
+
+                                    {/* Progress/Interest Level */}
+                                    <div className="w-full bg-blue-100 rounded-full h-2 mb-2">
+                                        <div className="bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full w-4/5 animate-pulse delay-200"></div>
+                                    </div>
+                                    <p className="text-xs text-slate-500">
+                                        Passion Level: Growing
+                                    </p>
+                                </div>
                             </div>
-                            <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                                Writing Thoughts
-                            </h3>
-                            <p className="text-slate-600 leading-relaxed">
-                                I believe the best ideas come from curiosity and
-                                conversation. I document my learnings, share
-                                insights from my journey, and sometimes just
-                                write about the interesting intersections
-                                between technology and life.
-                            </p>
                         </div>
 
                         {/* Travel */}
-                        <div className="text-center group">
-                            <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                                <span className="text-2xl">🌍</span>
+                        <div className="group animate-slide-up delay-800">
+                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-purple-100/50 relative overflow-hidden">
+                                {/* Background Pattern */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-pink-50/50"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
+
+                                {/* Floating Elements */}
+                                <div className="absolute top-4 right-4 w-6 h-6 bg-purple-400/20 rounded-full animate-bounce delay-900"></div>
+                                <div className="absolute bottom-4 left-4 w-4 h-4 bg-pink-400/20 rounded-full animate-bounce delay-1400"></div>
+
+                                <div className="relative z-10 text-center">
+                                    {/* Enhanced Icon */}
+                                    <div className="relative mb-6">
+                                        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                            <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                                                🌍
+                                            </span>
+                                        </div>
+                                        {/* Floating travel elements */}
+                                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-purple-400/40 rounded-full animate-bounce delay-1000 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-pink-400/40 rounded-full animate-bounce delay-1200 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors">
+                                        Wanderlust & Wonder
+                                    </h3>
+
+                                    <p className="text-slate-600 leading-relaxed mb-6 group-hover:text-slate-700 transition-colors">
+                                        Travel isn't just about checking places
+                                        off a list – it's about collecting
+                                        moments that inspire my work. Every
+                                        journey adds something valuable to my
+                                        perspective, keeping my work fresh and
+                                        my mind curious.
+                                    </p>
+
+                                    {/* Progress/Interest Level */}
+                                    <div className="w-full bg-purple-100 rounded-full h-2 mb-2">
+                                        <div className="bg-gradient-to-r from-purple-500 to-pink-600 h-2 rounded-full w-3/4 animate-pulse delay-400"></div>
+                                    </div>
+                                    <p className="text-xs text-slate-500">
+                                        Passion Level: Adventurous
+                                    </p>
+                                </div>
                             </div>
-                            <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                                Wanderlust & Wonder
-                            </h3>
-                            <p className="text-slate-600 leading-relaxed">
-                                Travel isn't just about checking places off a
-                                list – it's about collecting moments that
-                                inspire my work. Every journey adds something
-                                valuable to my perspective, keeping my work
-                                fresh and my mind curious.
-                            </p>
                         </div>
                     </div>
 
-                    <div className="text-center mt-12">
-                        <p className="text-slate-600 italic">
-                            These aren't just hobbies – they're sources of
-                            inspiration that keep my work fresh, my mind
-                            curious, and my approach to problem-solving
-                            wonderfully unpredictable.
-                        </p>
+                    <div className="text-center mt-12 animate-slide-up delay-1000">
+                        <div className="relative inline-block">
+                            <p className="text-slate-600 italic text-lg leading-relaxed max-w-2xl mx-auto relative z-10 hover:text-slate-700 transition-colors">
+                                These aren't just hobbies – they're sources of
+                                inspiration that keep my work fresh, my mind
+                                curious, and my approach to problem-solving
+                                wonderfully unpredictable.
+                            </p>
+                            {/* Decorative quote marks */}
+                            <div className="absolute -top-4 -left-4 text-4xl text-blue-200 opacity-50">
+                                "
+                            </div>
+                            <div className="absolute -bottom-4 -right-4 text-4xl text-blue-200 opacity-50">
+                                "
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
