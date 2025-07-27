@@ -2,21 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Animation Delays */
+@layer utilities {
+    .delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .delay-400 {
+        animation-delay: 400ms;
+    }
+
+    .delay-500 {
+        animation-delay: 500ms;
+    }
+
+    .delay-600 {
+        animation-delay: 600ms;
+    }
+
+    .delay-800 {
+        animation-delay: 800ms;
+    }
+
+    .delay-1000 {
+        animation-delay: 1000ms;
+    }
+
+    .delay-1200 {
+        animation-delay: 1200ms;
+    }
+
+    .delay-1500 {
+        animation-delay: 1500ms;
+    }
+
+    .delay-2000 {
+        animation-delay: 2000ms;
+    }
+}
+
 @layer base {
-  html {
-    color-scheme: light dark;
-  }
+    html {
+        color-scheme: light dark;
+    }
 
-  * {
-    @apply border-gray-200 dark:border-gray-800;
-  }
+    * {
+        @apply border-gray-200 dark:border-gray-800;
+    }
 
-  html,
-  body {
-    @apply text-gray-900 bg-gray-50 dark:bg-gray-950 dark:text-gray-200;
-  }
+    html,
+    body {
+        @apply text-gray-900 bg-gray-50 dark:bg-gray-950 dark:text-gray-200;
+    }
 
-  .using-mouse * {
-    outline: none !important;
-  }
+    .using-mouse * {
+        outline: none !important;
+    }
 }
