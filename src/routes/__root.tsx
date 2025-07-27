@@ -62,13 +62,72 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const closeMobileMenu = () => {
+        setIsMobileMenuOpen(false);
+    };
+
+    // Close mobile menu on window resize (when switching to desktop)
+    React.useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                // md breakpoint
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Close mobile menu when clicking outside
+    React.useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Element;
+            const nav = document.querySelector("nav");
+            if (isMobileMenuOpen && nav && !nav.contains(target)) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        if (isMobileMenuOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isMobileMenuOpen]);
+
+    // Close mobile menu with Escape key
+    React.useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape" && isMobileMenuOpen) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        if (isMobileMenuOpen) {
+            document.addEventListener("keydown", handleKeyDown);
+        }
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isMobileMenuOpen]);
+
     return (
         <html>
             <head>
                 <HeadContent />
             </head>
             <body>
-                <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
+                <nav className="bg-white border-b border-slate-200 sticky top-0 z-50 relative">
                     <div className="max-w-6xl mx-auto px-6 py-4">
                         <div className="flex items-center justify-between">
                             <Link
@@ -132,24 +191,116 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                             </div>
 
                             {/* Mobile menu button */}
-                            <button className="md:hidden p-2 text-slate-700 hover:text-blue-600">
-                                <svg
-                                    className="w-6 h-6"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                </svg>
+                            <button
+                                onClick={toggleMobileMenu}
+                                className="md:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors"
+                                aria-label="Toggle mobile menu"
+                            >
+                                {isMobileMenuOpen ? (
+                                    <svg
+                                        className="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        className="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+                                )}
                             </button>
                         </div>
                     </div>
+
+                    {/* Mobile menu panel */}
+                    {isMobileMenuOpen && (
+                        <div className="md:hidden bg-white border-t border-slate-200 animate-slide-up">
+                            <div className="px-6 py-4 space-y-4">
+                                <Link
+                                    to="/"
+                                    onClick={closeMobileMenu}
+                                    activeProps={{
+                                        className:
+                                            "text-blue-600 font-semibold",
+                                    }}
+                                    activeOptions={{ exact: true }}
+                                    className="block text-slate-700 hover:text-blue-600 transition-colors py-2"
+                                >
+                                    Home
+                                </Link>
+                                <Link
+                                    to="/about"
+                                    onClick={closeMobileMenu}
+                                    activeProps={{
+                                        className:
+                                            "text-blue-600 font-semibold",
+                                    }}
+                                    className="block text-slate-700 hover:text-blue-600 transition-colors py-2"
+                                >
+                                    About
+                                </Link>
+                                <Link
+                                    to="/work"
+                                    onClick={closeMobileMenu}
+                                    activeProps={{
+                                        className:
+                                            "text-blue-600 font-semibold",
+                                    }}
+                                    className="block text-slate-700 hover:text-blue-600 transition-colors py-2"
+                                >
+                                    Work
+                                </Link>
+                                <Link
+                                    to="/beyond-code"
+                                    onClick={closeMobileMenu}
+                                    activeProps={{
+                                        className:
+                                            "text-blue-600 font-semibold",
+                                    }}
+                                    className="block text-slate-700 hover:text-blue-600 transition-colors py-2"
+                                >
+                                    Beyond Code
+                                </Link>
+                                <Link
+                                    to="/contact"
+                                    onClick={closeMobileMenu}
+                                    activeProps={{
+                                        className: "bg-blue-700",
+                                    }}
+                                    className="block bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center font-medium"
+                                >
+                                    Contact
+                                </Link>
+                            </div>
+                        </div>
+                    )}
                 </nav>
+
+                {/* Mobile menu backdrop */}
+                {isMobileMenuOpen && (
+                    <div
+                        className="fixed inset-0 bg-black/20 z-40 md:hidden"
+                        onClick={closeMobileMenu}
+                    />
+                )}
+
                 {children}
 
                 {/* Footer */}
