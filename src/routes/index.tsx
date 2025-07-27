@@ -1187,38 +1187,119 @@ function Home() {
             </section>
 
             {/* Call to Action Section */}
-            <section className="relative py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
-                <div className="absolute inset-0 bg-black/10"></div>
-                <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                        Let's build something that matters
-                    </h2>
-                    <p className="text-xl mb-8 opacity-90">
-                        I'm always excited to collaborate on projects that
-                        challenge me, push boundaries, and hopefully make a
-                        positive impact. I believe the best work happens when
-                        curious, passionate people come together to solve
-                        interesting problems.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/contact">
-                            <Button
-                                variant="secondary"
-                                size="lg"
-                                className="bg-white text-blue-600 hover:bg-slate-50 shadow-lg"
-                            >
-                                Get In Touch
-                            </Button>
-                        </Link>
-                        <Link to="/work">
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="border-white text-white hover:bg-white hover:text-blue-600"
-                            >
-                                View My Work
-                            </Button>
-                        </Link>
+            <section className="relative py-24 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 text-white overflow-hidden">
+                {/* Enhanced Background Elements */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
+
+                {/* Floating Background Shapes */}
+                <div className="absolute top-20 left-10 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-300/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-300/5 rounded-full blur-3xl"></div>
+
+                {/* Floating Tech Icons */}
+                <div className="absolute top-32 right-32 w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center animate-bounce delay-500">
+                    <span className="text-2xl">🚀</span>
+                </div>
+                <div className="absolute bottom-32 left-32 w-10 h-10 bg-purple-300/20 rounded-lg flex items-center justify-center animate-bounce delay-1500">
+                    <span className="text-xl">💡</span>
+                </div>
+                <div className="absolute top-1/2 right-20 w-8 h-8 bg-indigo-300/20 rounded-lg flex items-center justify-center animate-bounce delay-2000">
+                    <span className="text-lg">✨</span>
+                </div>
+
+                <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+                    {/* Enhanced Content Container */}
+                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-slide-up">
+                            <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+                                Let's build something that matters
+                            </span>
+                        </h2>
+
+                        <p className="text-xl md:text-2xl mb-10 opacity-90 leading-relaxed max-w-4xl mx-auto animate-slide-up delay-200">
+                            I'm always excited to collaborate on projects that
+                            challenge me, push boundaries, and hopefully make a
+                            positive impact. I believe the best work happens
+                            when curious, passionate people come together to
+                            solve interesting problems.
+                        </p>
+
+                        {/* Enhanced CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up delay-400">
+                            <Link to="/contact" className="group">
+                                <Button
+                                    variant="secondary"
+                                    size="lg"
+                                    className="bg-white text-blue-600 hover:bg-blue-50 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105 px-8 py-4 text-lg font-semibold relative overflow-hidden"
+                                >
+                                    <span className="relative z-10 flex items-center">
+                                        <svg
+                                            className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                                            />
+                                        </svg>
+                                        Get In Touch
+                                    </span>
+                                    {/* Gradient overlay on hover */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </Button>
+                            </Link>
+
+                            <Link to="/work" className="group">
+                                <Button
+                                    variant="outline"
+                                    size="lg"
+                                    className="border-2 border-white/50 text-white hover:bg-white hover:text-blue-600 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 hover:scale-105 px-8 py-4 text-lg font-semibold backdrop-blur-sm"
+                                >
+                                    <span className="flex items-center">
+                                        <svg
+                                            className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                                            />
+                                        </svg>
+                                        View My Work
+                                    </span>
+                                </Button>
+                            </Link>
+                        </div>
+
+                        {/* Additional Interactive Elements */}
+                        <div className="mt-12 flex justify-center items-center space-x-8 animate-slide-up delay-600">
+                            <div className="flex items-center space-x-2 group cursor-pointer">
+                                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                <span className="text-sm opacity-75 group-hover:opacity-100 transition-opacity">
+                                    Available for projects
+                                </span>
+                            </div>
+                            <div className="flex items-center space-x-2 group cursor-pointer">
+                                <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-500"></div>
+                                <span className="text-sm opacity-75 group-hover:opacity-100 transition-opacity">
+                                    Remote friendly
+                                </span>
+                            </div>
+                            <div className="flex items-center space-x-2 group cursor-pointer">
+                                <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-1000"></div>
+                                <span className="text-sm opacity-75 group-hover:opacity-100 transition-opacity">
+                                    Quick response
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
