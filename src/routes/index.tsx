@@ -216,7 +216,7 @@ function Home() {
                 <div className="absolute top-10 right-10 w-32 h-32 bg-blue-100/50 rounded-full blur-2xl"></div>
                 <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-100/50 rounded-full blur-2xl"></div>
 
-                <div className="max-w-6xl mx-auto px-6 relative z-10">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 animate-slide-up">
@@ -494,7 +494,7 @@ function Home() {
                 <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-100/10 rounded-full blur-3xl"></div>
 
-                <div className="max-w-6xl mx-auto px-6 relative z-10">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 animate-slide-up">
                             My Work
@@ -708,7 +708,7 @@ function Home() {
                 <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-100/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-100/20 rounded-full blur-3xl"></div>
 
-                <div className="max-w-6xl mx-auto px-6 relative z-10">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 animate-slide-up">
                             Beyond Code
@@ -899,7 +899,7 @@ function Home() {
                     <span className="text-sm">💻</span>
                 </div>
 
-                <div className="max-w-6xl mx-auto px-6 relative z-10">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 animate-slide-up">
                             Skills & Technologies
@@ -1207,7 +1207,7 @@ function Home() {
                     <span className="text-lg">✨</span>
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+                <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
                     {/* Enhanced Content Container */}
                     <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
                         <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-slide-up">

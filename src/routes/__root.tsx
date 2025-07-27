@@ -127,14 +127,25 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                 <HeadContent />
             </head>
             <body>
-                <nav className="bg-white border-b border-slate-200 sticky top-0 z-50 relative">
-                    <div className="max-w-6xl mx-auto px-6 py-4">
+                <nav className="bg-white/95 backdrop-blur-lg border-b border-slate-200/50 sticky top-0 z-50 relative shadow-sm">
+                    {/* Background gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 via-transparent to-purple-50/30"></div>
+
+                    <div className="max-w-7xl mx-auto px-6 py-4 relative z-10">
                         <div className="flex items-center justify-between">
                             <Link
                                 to="/"
-                                className="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
+                                className="group flex items-center space-x-2"
                             >
-                                Sharfuzzaman
+                                {/* Logo/Brand with enhanced styling */}
+                                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                    <span className="text-white font-bold text-lg">
+                                        S
+                                    </span>
+                                </div>
+                                <span className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
+                                    Sharfuzzaman
+                                </span>
                             </Link>
 
                             <div className="hidden md:flex items-center space-x-8">
@@ -142,77 +153,89 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                                     to="/"
                                     activeProps={{
                                         className:
-                                            "text-blue-600 font-semibold",
+                                            "text-blue-600 font-semibold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:rounded-full",
                                     }}
                                     activeOptions={{ exact: true }}
-                                    className="text-slate-700 hover:text-blue-600 transition-colors"
+                                    className="text-slate-700 hover:text-blue-600 transition-all duration-300 relative group py-2"
                                 >
-                                    Home
+                                    <span className="relative z-10">Home</span>
+                                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-300"></div>
                                 </Link>
                                 <Link
                                     to="/about"
                                     activeProps={{
                                         className:
-                                            "text-blue-600 font-semibold",
+                                            "text-blue-600 font-semibold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:rounded-full",
                                     }}
-                                    className="text-slate-700 hover:text-blue-600 transition-colors"
+                                    className="text-slate-700 hover:text-blue-600 transition-all duration-300 relative group py-2"
                                 >
-                                    About
+                                    <span className="relative z-10">About</span>
+                                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-300"></div>
                                 </Link>
                                 <Link
                                     to="/work"
                                     activeProps={{
                                         className:
-                                            "text-blue-600 font-semibold",
+                                            "text-blue-600 font-semibold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:rounded-full",
                                     }}
-                                    className="text-slate-700 hover:text-blue-600 transition-colors"
+                                    className="text-slate-700 hover:text-blue-600 transition-all duration-300 relative group py-2"
                                 >
-                                    Work
+                                    <span className="relative z-10">Work</span>
+                                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-300"></div>
                                 </Link>
                                 <Link
                                     to="/beyond-code"
                                     activeProps={{
                                         className:
-                                            "text-blue-600 font-semibold",
+                                            "text-blue-600 font-semibold relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:rounded-full",
                                     }}
-                                    className="text-slate-700 hover:text-blue-600 transition-colors"
+                                    className="text-slate-700 hover:text-blue-600 transition-all duration-300 relative group py-2"
                                 >
-                                    Beyond Code
+                                    <span className="relative z-10">
+                                        Beyond Code
+                                    </span>
+                                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 rounded-full group-hover:w-full transition-all duration-300"></div>
                                 </Link>
                                 <Link
                                     to="/contact"
                                     activeProps={{
-                                        className: "bg-blue-700",
+                                        className: "bg-blue-700 shadow-lg",
                                     }}
-                                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-105 relative overflow-hidden group"
                                 >
-                                    Contact
+                                    <span className="relative z-10 flex items-center">
+                                        <svg
+                                            className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                                            />
+                                        </svg>
+                                        Contact
+                                    </span>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </Link>
                             </div>
 
-                            {/* Mobile menu button */}
+                            {/* Enhanced Mobile menu button */}
                             <button
                                 onClick={toggleMobileMenu}
-                                className="md:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors"
+                                className="md:hidden p-3 rounded-xl hover:bg-blue-50 transition-all duration-300 relative group"
                                 aria-label="Toggle mobile menu"
                             >
-                                {isMobileMenuOpen ? (
+                                <div className="w-6 h-6 relative">
                                     <svg
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    </svg>
-                                ) : (
-                                    <svg
-                                        className="w-6 h-6"
+                                        className={`w-6 h-6 text-slate-700 group-hover:text-blue-600 transition-all duration-300 absolute inset-0 ${
+                                            isMobileMenuOpen
+                                                ? "rotate-180 opacity-0"
+                                                : "rotate-0 opacity-100"
+                                        }`}
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -224,7 +247,24 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                                             d="M4 6h16M4 12h16M4 18h16"
                                         />
                                     </svg>
-                                )}
+                                    <svg
+                                        className={`w-6 h-6 text-slate-700 group-hover:text-blue-600 transition-all duration-300 absolute inset-0 ${
+                                            isMobileMenuOpen
+                                                ? "rotate-0 opacity-100"
+                                                : "rotate-180 opacity-0"
+                                        }`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                </div>
                             </button>
                         </div>
                     </div>
@@ -303,16 +343,28 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
                 {children}
 
-                {/* Footer */}
-                <footer className="bg-slate-900 text-white">
-                    <div className="max-w-6xl mx-auto px-6 py-12">
+                {/* Enhanced Footer */}
+                <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+                    {/* Background Elements */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-transparent to-purple-900/10"></div>
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
+
+                    <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
                         <div className="grid md:grid-cols-4 gap-8">
-                            {/* Brand Section */}
+                            {/* Enhanced Brand Section */}
                             <div className="md:col-span-2">
-                                <h3 className="text-xl font-bold mb-4">
-                                    Sharfuzzaman
-                                </h3>
-                                <p className="text-slate-300 leading-relaxed mb-6 max-w-md">
+                                <div className="flex items-center space-x-3 mb-6">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg">
+                                        <span className="text-white font-bold text-xl">
+                                            S
+                                        </span>
+                                    </div>
+                                    <h3 className="text-2xl font-bold">
+                                        Sharfuzzaman
+                                    </h3>
+                                </div>
+                                <p className="text-slate-300 leading-relaxed mb-8 max-w-md text-lg">
                                     Frontend developer crafting digital
                                     experiences that feel like home. Building
                                     interfaces that aren't just pixel-perfect,
@@ -321,11 +373,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                                 <div className="flex space-x-4">
                                     <a
                                         href="#"
-                                        className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+                                        className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-blue-600 hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group"
                                         aria-label="LinkedIn"
                                     >
                                         <svg
-                                            className="w-5 h-5"
+                                            className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
                                             fill="currentColor"
                                             viewBox="0 0 24 24"
                                         >
@@ -334,11 +386,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                                     </a>
                                     <a
                                         href="#"
-                                        className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+                                        className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-slate-700 hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group"
                                         aria-label="GitHub"
                                     >
                                         <svg
-                                            className="w-5 h-5"
+                                            className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
                                             fill="currentColor"
                                             viewBox="0 0 24 24"
                                         >
@@ -347,11 +399,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                                     </a>
                                     <a
                                         href="#"
-                                        className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+                                        className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-sky-600 hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group"
                                         aria-label="Twitter"
                                     >
                                         <svg
-                                            className="w-5 h-5"
+                                            className="w-5 h-5 group-hover:scale-110 transition-transform duration-300"
                                             fill="currentColor"
                                             viewBox="0 0 24 24"
                                         >
@@ -360,7 +412,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                                     </a>
                                     <a
                                         href="mailto:hello@sharfuzzaman.dev"
-                                        className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"
+                                        className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-green-600 hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group"
                                         aria-label="Email"
                                     >
                                         <svg
