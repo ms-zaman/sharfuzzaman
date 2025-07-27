@@ -15,6 +15,7 @@ import { Route as WorkRouteImport } from './routes/work'
 import { Route as UsersRouteImport } from './routes/users'
 import { Route as RedirectRouteImport } from './routes/redirect'
 import { Route as PostsRouteImport } from './routes/posts'
+import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as DeferredRouteImport } from './routes/deferred'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BeyondCodeRouteImport } from './routes/beyond-code'
@@ -53,6 +54,11 @@ const RedirectRoute = RedirectRouteImport.update({
 const PostsRoute = PostsRouteImport.update({
   id: '/posts',
   path: '/posts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignSystemRoute = DesignSystemRouteImport.update({
+  id: '/design-system',
+  path: '/design-system',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeferredRoute = DeferredRouteImport.update({
@@ -148,6 +154,7 @@ export interface FileRoutesByFullPath {
   '/beyond-code': typeof BeyondCodeRoute
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
+  '/design-system': typeof DesignSystemRoute
   '/posts': typeof PostsRouteWithChildren
   '/redirect': typeof RedirectRoute
   '/users': typeof UsersRouteWithChildren
@@ -166,6 +173,7 @@ export interface FileRoutesByTo {
   '/beyond-code': typeof BeyondCodeRoute
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
+  '/design-system': typeof DesignSystemRoute
   '/redirect': typeof RedirectRoute
   '/work': typeof WorkRoute
   '/posts/$postId': typeof PostsPostIdRoute
@@ -184,6 +192,7 @@ export interface FileRoutesById {
   '/beyond-code': typeof BeyondCodeRoute
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
+  '/design-system': typeof DesignSystemRoute
   '/posts': typeof PostsRouteWithChildren
   '/redirect': typeof RedirectRoute
   '/users': typeof UsersRouteWithChildren
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/beyond-code'
     | '/contact'
     | '/deferred'
+    | '/design-system'
     | '/posts'
     | '/redirect'
     | '/users'
@@ -223,6 +233,7 @@ export interface FileRouteTypes {
     | '/beyond-code'
     | '/contact'
     | '/deferred'
+    | '/design-system'
     | '/redirect'
     | '/work'
     | '/posts/$postId'
@@ -240,6 +251,7 @@ export interface FileRouteTypes {
     | '/beyond-code'
     | '/contact'
     | '/deferred'
+    | '/design-system'
     | '/posts'
     | '/redirect'
     | '/users'
@@ -261,6 +273,7 @@ export interface RootRouteChildren {
   BeyondCodeRoute: typeof BeyondCodeRoute
   ContactRoute: typeof ContactRoute
   DeferredRoute: typeof DeferredRoute
+  DesignSystemRoute: typeof DesignSystemRoute
   PostsRoute: typeof PostsRouteWithChildren
   RedirectRoute: typeof RedirectRoute
   UsersRoute: typeof UsersRouteWithChildren
@@ -324,6 +337,13 @@ declare module '@tanstack/react-router' {
       path: '/posts'
       fullPath: '/posts'
       preLoaderRoute: typeof PostsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/design-system': {
+      id: '/design-system'
+      path: '/design-system'
+      fullPath: '/design-system'
+      preLoaderRoute: typeof DesignSystemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/deferred': {
@@ -525,6 +545,7 @@ const rootRouteChildren: RootRouteChildren = {
   BeyondCodeRoute: BeyondCodeRoute,
   ContactRoute: ContactRoute,
   DeferredRoute: DeferredRoute,
+  DesignSystemRoute: DesignSystemRoute,
   PostsRoute: PostsRouteWithChildren,
   RedirectRoute: RedirectRoute,
   UsersRoute: UsersRouteWithChildren,
