@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button, Section, SectionHeader, Grid, Card, CardHeader, CardTitle, CardDescription } from "~/components/ui";
-import { ProjectCard, PortfolioBrowser } from "~/components/portfolio";
+import { ProjectCard } from "~/components/portfolio";
 import { projects } from "~/data/projects";
 import { getFeaturedProjects } from "~/utils/portfolio";
 
@@ -221,46 +221,7 @@ function Work() {
                 </div>
             </section>
 
-            {/* Portfolio Browser */}
-            <section className="relative px-6 py-20 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100">
-                    {/* Subtle background pattern */}
-                    <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M0 0h20L0 20z'/%3E%3C/g%3E%3C/svg%3E\")" }}></div>
-                    
-                    {/* Floating Elements */}
-                    <div className="absolute top-20 left-10 w-32 h-32 bg-blue-400/5 rounded-full blur-2xl animate-pulse"></div>
-                    <div className="absolute bottom-20 right-10 w-40 h-40 bg-indigo-400/5 rounded-full blur-2xl animate-pulse delay-1000"></div>
-                </div>
-                
-                <div className="relative z-10 max-w-6xl mx-auto">
-                    <div className="flex flex-col items-center mb-12">
-                        <div className="inline-flex items-center px-4 py-2 bg-indigo-50/80 backdrop-blur-sm rounded-full border border-indigo-200/50 shadow-sm animate-fade-in mb-4">
-                            <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2 animate-pulse"></div>
-                            <span className="text-sm font-medium text-indigo-700">
-                                Project Browser
-                            </span>
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center animate-fade-in">
-                            Explore My Work
-                        </h2>
-                        <div className="h-1 w-20 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full mb-8 animate-scale-x"></div>
-                        <p className="text-xl text-slate-600 text-center mb-12 max-w-3xl mx-auto animate-fade-in delay-200">
-                            Browse through all my projects with advanced filtering and search
-                        </p>
-                    </div>
-
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-slate-200/50 p-6 animate-fade-in delay-300">
-                        <PortfolioBrowser
-                            projects={projects}
-                            initialLayout="grid"
-                            showFilters={true}
-                            showSearch={true}
-                            showSort={true}
-                            showLayoutToggle={true}
-                        />
-                    </div>
-                </div>
-            </section>
+            
 
             {/* My Process Section */}
             <section className="relative px-6 py-20 overflow-hidden">
