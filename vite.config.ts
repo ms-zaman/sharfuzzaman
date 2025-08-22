@@ -14,4 +14,7 @@ export default defineConfig({
     tanstackStart({ customViteReactPlugin: true }),
     viteReact(),
   ],
+  css: {
+    devSourcemap: true,
+  },
 })
