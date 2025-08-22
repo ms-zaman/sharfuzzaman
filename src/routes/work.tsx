@@ -202,7 +202,7 @@ function Work() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {featuredProjects.map((project, index) => (
                             <div key={project.id} className={`animate-fade-in delay-${(index + 2) * 100}`}>
-                                <ProjectCard project={project} variant="grid" size="md" />
+                                <ProjectCard project={project} variant="default" size="md" />
                             </div>
                         ))}
                     </div>

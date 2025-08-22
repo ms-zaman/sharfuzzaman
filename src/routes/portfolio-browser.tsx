@@ -6,9 +6,9 @@ export const Route = createFileRoute("/portfolio-browser")({
     component: PortfolioBrowserPage,
 });
 
-function PortfolioBrowserPage() {
+function PortfolioBrowserPage(props: any) {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white" {...props}>
             {/* Header */}
             <Section variant="gradient" spacing="lg">
                 <div className="text-center">

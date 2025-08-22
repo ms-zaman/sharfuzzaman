@@ -41,7 +41,7 @@ interface ProjectCardProps {
     showTechnologies?: boolean;
     showMetrics?: boolean;
     className?: string;
-    variant?: string;
+    variant?: "default" | "ghost" | "elevated" | "outlined" | "gradient";
 }
 
 export const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
@@ -146,7 +146,6 @@ export const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
                                 variant="primary"
                                 size="sm"
                                 onClick={() => {
-                                    e.preventDefault();
                                     window.open(liveLink.url, "_blank");
                                 }}
                             >
